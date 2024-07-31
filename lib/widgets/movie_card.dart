@@ -16,7 +16,17 @@ class MovieCardWidget extends StatelessWidget {
         width: 375,
         height: 650,
         child: Stack(
-          children: [PLACEHOLDER_SVG, Text(title)],
+          children: [
+            PLACEHOLDER_SVG,
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                title,
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            )
+          ],
         ),
       ),
     );

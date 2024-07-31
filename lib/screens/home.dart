@@ -26,7 +26,9 @@ class _HomeWidgetState extends State<HomeWidget> {
               icon: const Icon(CupertinoIcons.line_horizontal_3)),
         ),
         child: const Center(
-          child: MovieCardWidget(title: "movie title",),
+          child: MovieCardWidget(
+            title: "Saving Private Ryan",
+          ),
         ));
   }
 }
