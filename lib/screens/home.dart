@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_match/widgets/movie_card.dart';
+import 'package:movie_match/widgets/like_button.dart';
+import 'package:movie_match/widgets/skip_button.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -25,9 +27,20 @@ class _HomeWidgetState extends State<HomeWidget> {
               onPressed: () {},
               icon: const Icon(CupertinoIcons.line_horizontal_3)),
         ),
-        child: const Center(
-          child: MovieCardWidget(
-            title: "Saving Private Ryan",
+        child: const SafeArea(
+          minimum: EdgeInsets.only(top: 125),
+          child: Column(
+            children: [
+              Center(
+                child: MovieCardWidget(
+                  title: "Saving Private Ryan",
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [SkipButtonWidget(), LikeButtonWidget()],
+              )
+            ],
           ),
         ));
   }
