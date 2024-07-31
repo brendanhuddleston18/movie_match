@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_match/widgets/movie_card.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -24,6 +25,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               onPressed: () {},
               icon: const Icon(CupertinoIcons.line_horizontal_3)),
         ),
-        child: const Text("Movie cards go here"));
+        child: const Center(
+          child: MovieCardWidget(title: "movie title",),
+        ));
   }
 }
