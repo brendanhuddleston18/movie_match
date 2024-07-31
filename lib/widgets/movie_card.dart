@@ -17,7 +17,10 @@ class MovieCardWidget extends StatelessWidget {
         height: 650,
         child: Stack(
           children: [
-            PLACEHOLDER_SVG,
+            ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              child: PLACEHOLDER_SVG,
+            ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Text(
