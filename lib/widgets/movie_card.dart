@@ -10,6 +10,7 @@ class MovieCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 64,
       child: SizedBox(
         width: 375,
         height: 650,
