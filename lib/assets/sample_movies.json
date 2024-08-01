@@ -1,20 +1,36 @@
 {
-    "Saving Private Ryan": {
-        "Image": "image",
-        "Description": "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
-        "Cast": ["Tom Hanks", "Matt Damon", "Tom Sizemore"],
-        "Rating" : 8.6
-    },
-    "The Other Guys": {
-        "Image": "Image",
-        "Description": "Two mismatched New York City detectives seize an opportunity to step up like the city's top cops, whom they idolize, only things don't quite go as planned.",
-        "Cast": ["Will Ferrell", "Mark Wahlberg"],
-        "Rating": 6.6
-    },
-    "Arrival": {
-        "Image": "Image",
-        "Description": "Linguist Louise Banks leads a team of investigators when gigantic spaceships touch down around the world. As nations teeter on the verge of global war, Banks and her crew must find a way to communicate with the extraterrestrial visitors.",
-        "Cast": ["Amy Adams", "Jeremy Renner", "Forest Whitaker"],
-        "Rating": 7.9
-    }
+    "movies": [
+        {
+            "Title": "Saving Private Ryan",
+            "Image": "https://image.tmdb.org/t/p/original/uqx37cS8cpHg8U35f9U5IBlrCV3.jpg",
+            "Description": "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
+            "Cast": [
+                "Tom Hanks",
+                "Matt Damon",
+                "Tom Sizemore"
+            ],
+            "Rating": 8.6
+        },
+        {
+            "Title": "The Other Guys",
+            "Image": "https://image.tmdb.org/t/p/original/gEz6vvd9zX1sa4e76qNMxawncX0.jpg",
+            "Description": "Two mismatched New York City detectives seize an opportunity to step up like the city's top cops, whom they idolize, only things don't quite go as planned.",
+            "Cast": [
+                "Will Ferrell",
+                "Mark Wahlberg"
+            ],
+            "Rating": 6.6
+        },
+        {
+            "Title": "Arrival",
+            "Image": "https://image.tmdb.org/t/p/original/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg",
+            "Description": "Linguist Louise Banks leads a team of investigators when gigantic spaceships touch down around the world. As nations teeter on the verge of global war, Banks and her crew must find a way to communicate with the extraterrestrial visitors.",
+            "Cast": [
+                "Amy Adams",
+                "Jeremy Renner",
+                "Forest Whitaker"
+            ],
+            "Rating": 7.9
+        }
+    ]
 }

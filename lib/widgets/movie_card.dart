@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movie_match/helpers/constants.dart';
 
 class MovieCardWidget extends StatelessWidget {
-  const MovieCardWidget({super.key, required this.title});
+  const MovieCardWidget(
+      {super.key, required this.title, required this.imageURL});
 
   final String title;
+  final String imageURL;
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +13,29 @@ class MovieCardWidget extends StatelessWidget {
       child: SizedBox(
         width: 375,
         height: 650,
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-              child: PLACEHOLDER_SVG,
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                title,
-                style:
-                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            )
-          ],
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+          child: Image.network(
+            imageURL,
+            fit: BoxFit.fill,
+          ),
         ),
+        // child: Stack(
+        //   children: [
+        //     ClipRRect(
+        //       borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+        //       child: Image.network(imageURL),
+        //     ),
+        //     Align(
+        //       alignment: Alignment.bottomCenter,
+        //       child: Text(
+        //         title,
+        //         style:
+        //             const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        //       ),
+        //     )
+        //   ],
+        // ),
       ),
     );
   }
