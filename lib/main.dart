@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:movie_match/screens/home.dart';
 

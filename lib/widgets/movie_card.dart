@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import 'package:movie_match/helpers/constants.dart';
 
 class MovieCardWidget extends StatelessWidget {
