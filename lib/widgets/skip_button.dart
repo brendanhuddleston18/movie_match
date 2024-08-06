@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:swipe_cards/swipe_cards.dart';
 
 class SkipButtonWidget extends StatefulWidget {
-  const SkipButtonWidget({super.key, required this.incrementIndex});
+  const SkipButtonWidget({super.key, required this.matchEngine});
 
-  final void Function() incrementIndex;
+  final MatchEngine matchEngine;
 
   @override
   State<SkipButtonWidget> createState() => _SkipButtonWidgetState();
@@ -16,7 +17,7 @@ class _SkipButtonWidgetState extends State<SkipButtonWidget> {
     return IconButton(
         style: const ButtonStyle(iconSize: WidgetStatePropertyAll(94)),
         onPressed: () {
-          widget.incrementIndex();
+          widget.matchEngine.currentItem!.nope();
         },
         icon: const Icon(color: Colors.red, CupertinoIcons.xmark_circle));
   }
