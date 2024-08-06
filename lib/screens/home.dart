@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:movie_match/widgets/like_button.dart';
-import 'package:movie_match/widgets/skip_button.dart';
 import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 
@@ -28,10 +26,11 @@ class _HomeWidgetState extends State<HomeWidget> {
         swipeList.add(SwipeItem(
             content: movie,
             likeAction: () {
-              print("like");
+              // TODO: Create watchlist
+              // TODO: Add movie to "watchlist"
             },
             nopeAction: () {
-              print("nope");
+              // TODO: Filter out movies that are "noped"
             }));
       }
     });
@@ -53,7 +52,6 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print("movie list: $movieList");
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         leading: IconButton(
