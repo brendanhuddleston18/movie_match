@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MovieCardWidget extends StatelessWidget {
-  const MovieCardWidget(
-      {super.key, required this.title, required this.imageURL});
+  const MovieCardWidget({super.key, required this.movie});
 
-  final String title;
-  final String imageURL;
+  final dynamic movie;
 
   @override
   Widget build(BuildContext context) {
@@ -13,30 +11,14 @@ class MovieCardWidget extends StatelessWidget {
       elevation: 64,
       child: SizedBox(
         width: 375,
-        height: 650,
+        height: 550,
         child: ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(10.0)),
           child: Image.network(
-            imageURL,
-            fit: BoxFit.fill,
+            movie["Image"],
+            fit: BoxFit.fitWidth,
           ),
         ),
-        // child: Stack(
-        //   children: [
-        //     ClipRRect(
-        //       borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-        //       child: Image.network(imageURL),
-        //     ),
-        //     Align(
-        //       alignment: Alignment.bottomCenter,
-        //       child: Text(
-        //         title,
-        //         style:
-        //             const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        //       ),
-        //     )
-        //   ],
-        // ),
       ),
     );
   }
