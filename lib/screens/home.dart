@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -16,6 +17,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   int movieIndex = 0;
   List movieList = [];
   List<SwipeItem> swipeList = [];
+  dynamic currentMovie = {};
   Future<void> readJson() async {
     final String response =
         await rootBundle.loadString("lib/assets/sample_movies.json");
@@ -36,13 +38,11 @@ class _HomeWidgetState extends State<HomeWidget> {
     });
   }
 
-  void incrementIndex() {
-    if (movieIndex < 2) {
-      movieIndex++;
-    } else {
-      return;
-    }
+  void sendMovieData(dynamic movie) {
+    currentMovie = movie;
   }
+
+  PanelController panelController = PanelController();
 
   @override
   void initState() {
@@ -52,6 +52,10 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => panelController.hide(),
+    );
+
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         leading: IconButton(
@@ -65,12 +69,18 @@ class _HomeWidgetState extends State<HomeWidget> {
             onPressed: () {},
             icon: const Icon(CupertinoIcons.line_horizontal_3)),
       ),
-      child: SafeArea(
-        minimum: const EdgeInsets.only(top: 125),
-        child: SwipeCardWidget(
-          swipeList: swipeList,
-        ),
-      ),
+      child: SlidingUpPanel(
+          backdropEnabled: true,
+          controller: panelController,
+          panel: const Text("fuck"),
+          body: SafeArea(
+            minimum: const EdgeInsets.only(top: 125),
+            child: SwipeCardWidget(
+              sendMovieData: sendMovieData,
+              swipeList: swipeList,
+              panelController: panelController,
+            ),
+          )),
     );
   }
 }
