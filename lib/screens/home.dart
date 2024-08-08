@@ -17,7 +17,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   int movieIndex = 0;
   List movieList = [];
   List<SwipeItem> swipeList = [];
-  dynamic currentMovie = {};
+  dynamic currentMovie = {"Title": ""};
   Future<void> readJson() async {
     final String response =
         await rootBundle.loadString("lib/assets/sample_movies.json");
@@ -31,15 +31,16 @@ class _HomeWidgetState extends State<HomeWidget> {
               // TODO: Create watchlist
               // TODO: Add movie to "watchlist"
             },
-            nopeAction: () {
-              // TODO: Filter out movies that are "noped"
-            }));
+            nopeAction: () {}));
       }
     });
   }
 
   void sendMovieData(dynamic movie) {
-    currentMovie = movie;
+    setState(() {
+      currentMovie = movie;
+    });
+    print("after press: $currentMovie");
   }
 
   PanelController panelController = PanelController();
@@ -47,14 +48,15 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   void initState() {
     readJson();
+    print("before press $currentMovie");
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) => panelController.hide(),
-    );
+    // WidgetsBinding.instance.addPostFrameCallback(
+    //   (_) => panelController.hide(),
+    // );
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
@@ -72,7 +74,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       child: SlidingUpPanel(
           backdropEnabled: true,
           controller: panelController,
-          panel: const Text("fuck"),
+          panel: Text(currentMovie["Title"]),
           body: SafeArea(
             minimum: const EdgeInsets.only(top: 125),
             child: SwipeCardWidget(

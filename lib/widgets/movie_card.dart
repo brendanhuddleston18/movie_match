@@ -25,10 +25,8 @@ class _MovieCardWidgetState extends State<MovieCardWidget> {
       elevation: 64,
       child: GestureDetector(
           onLongPress: () {
-            setState(() {
-              widget.panelController.show();
-              widget.sendMovieData(widget.movie);
-            });
+            widget.sendMovieData(widget.movie);
+            widget.panelController.show();
           },
           child: SizedBox(
               width: 375,
