@@ -33,6 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.10+1
   swipe_cards: ^2.0.0+1
+  sliding_up_panel: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:
