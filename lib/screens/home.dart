@@ -6,6 +6,9 @@ import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
+// TODO: Implement GETX inorder to update variables without full view changing
+// https://pub.dev/packages/get
+
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
 
@@ -23,15 +26,22 @@ class _HomeWidgetState extends State<HomeWidget> {
         await rootBundle.loadString("lib/assets/sample_movies.json");
     final data = await json.decode(response);
     setState(() {
+      print('reading JSON');
       movieList = data["movies"];
-      for (final movie in movieList) {
+      for (final (index, movie) in movieList.indexed) {
         swipeList.add(SwipeItem(
             content: movie,
             likeAction: () {
               // TODO: Create watchlist
               // TODO: Add movie to "watchlist"
             },
-            nopeAction: () {}));
+            nopeAction: () {
+              setState(() {
+                print(index);
+                swipeList.remove(swipeList[index - 1]);
+              });
+              // print(swipeList[index].content);
+            }));
       }
     });
   }
@@ -40,7 +50,6 @@ class _HomeWidgetState extends State<HomeWidget> {
     setState(() {
       currentMovie = movie;
     });
-    print("after press: $currentMovie");
   }
 
   PanelController panelController = PanelController();
@@ -48,7 +57,6 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   void initState() {
     readJson();
-    print("before press $currentMovie");
     super.initState();
   }
 

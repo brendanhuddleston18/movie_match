@@ -23,7 +23,6 @@ class SwipeCardWidget extends StatefulWidget {
 class _SwipeCardWidgetState extends State<SwipeCardWidget> {
   @override
   void initState() {
-    setState(() {});
     super.initState();
   }
 
