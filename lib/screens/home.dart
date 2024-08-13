@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:get/get.dart';
 
 // TODO: Implement GETX inorder to update variables without full view changing
 // https://pub.dev/packages/get
@@ -36,10 +37,8 @@ class _HomeWidgetState extends State<HomeWidget> {
               // TODO: Add movie to "watchlist"
             },
             nopeAction: () {
-              setState(() {
-                print(index);
-                swipeList.remove(swipeList[index - 1]);
-              });
+              print(index);
+              swipeList.remove(swipeList[index - 1]);
               // print(swipeList[index].content);
             }));
       }
