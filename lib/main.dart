@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:movie_match/screens/home.dart';
+import 'package:movie_match/services/movie_service.dart';
 
-void main() {
+Future<Null> main() async {
+  await movies.init();
   runApp(const MyApp());
 }
 
