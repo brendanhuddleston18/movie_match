@@ -37,10 +37,8 @@ class _HomeWidgetState extends State<HomeWidget> {
       child: SlidingUpPanel(
           backdropEnabled: true,
           controller: panelController,
-          panel: Obx(() => Text(
-              (movies.matchEngine.value!.currentItem?.content as Movie?)
-                      ?.title ??
-                  "empty")),
+          panel: Obx(() =>
+              Text((movies.currentMovie.value!.content.title) ?? "empty")),
           body: SafeArea(
             minimum: const EdgeInsets.only(top: 125),
             child: SwipeCardWidget(

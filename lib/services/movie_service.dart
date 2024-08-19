@@ -12,6 +12,7 @@ class MovieService extends GetxService {
   final RxList<Movie> movieList = <Movie>[].obs;
   final RxList<SwipeItem> swipeList = <SwipeItem>[].obs;
   final Rx<MatchEngine?> matchEngine = Rxn<MatchEngine>();
+  Rx<SwipeItem?> currentMovie = Rxn<SwipeItem?>();
 
   Future<void> init() async {
     // TODO: Create function to change MatchEngine's current val to next val and trigger on Like/Nope Action
@@ -21,6 +22,8 @@ class MovieService extends GetxService {
     addMoviesToList(data);
     addToSwipeList(movieList);
     matchEngine.value = MatchEngine(swipeItems: swipeList);
+    currentMovie.value = matchEngine.value!.currentItem;
+    print(currentMovie);
   }
 
   void addMoviesToList(dynamic data) {
@@ -29,11 +32,18 @@ class MovieService extends GetxService {
   }
 
   void addToSwipeList(List<Movie> movieList) {
-    swipeList.addAll((movieList).map((movie) =>
-        SwipeItem(content: movie, likeAction: () {
-
-        }, nopeAction: () {
-
+    swipeList.addAll((movieList).map((movie) => SwipeItem(
+        content: movie,
+        likeAction: () {
+          iterateValue();
+        },
+        nopeAction: () {
+          iterateValue();
         })));
+  }
+
+  void iterateValue() {
+    currentMovie.value = matchEngine.value!.nextItem;
+    print(currentMovie.value!.content.title);
   }
 }
