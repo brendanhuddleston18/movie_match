@@ -1,13 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movie_match/classes/movie_class.dart';
 import 'package:movie_match/services/movie_service.dart';
 import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
-// TODO: Implement GETX inorder to update variables without full view changing
-// https://pub.dev/packages/get
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});

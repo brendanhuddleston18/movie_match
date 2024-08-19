@@ -15,7 +15,6 @@ class MovieService extends GetxService {
   Rx<SwipeItem?> currentMovie = Rxn<SwipeItem?>();
 
   Future<void> init() async {
-    // TODO: Create function to change MatchEngine's current val to next val and trigger on Like/Nope Action
     final String response =
         await rootBundle.loadString("lib/assets/sample_movies.json");
     final data = json.decode(response);
@@ -23,7 +22,6 @@ class MovieService extends GetxService {
     addToSwipeList(movieList);
     matchEngine.value = MatchEngine(swipeItems: swipeList);
     currentMovie.value = matchEngine.value!.currentItem;
-    print(currentMovie);
   }
 
   void addMoviesToList(dynamic data) {
@@ -44,6 +42,5 @@ class MovieService extends GetxService {
 
   void iterateValue() {
     currentMovie.value = matchEngine.value!.nextItem;
-    print(currentMovie.value!.content.title);
   }
 }
