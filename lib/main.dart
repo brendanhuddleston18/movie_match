@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:movie_match/screens/home.dart';
 import 'package:movie_match/services/movie_service.dart';
+import 'package:movie_match/services/panel_service.dart';
 
 Future<Null> main() async {
   await movies.init();
+  await panel.init();
   runApp(const MyApp());
 }
 

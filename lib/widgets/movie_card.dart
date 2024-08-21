@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:movie_match/classes/movie_class.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:movie_match/services/panel_service.dart';
 
 class MovieCardWidget extends StatefulWidget {
   const MovieCardWidget({
     super.key,
     required this.movie,
-    required this.panelController,
   });
 
   final Movie movie;
-  final PanelController panelController;
 
   @override
   State<MovieCardWidget> createState() => _MovieCardWidgetState();
@@ -25,7 +23,7 @@ class _MovieCardWidgetState extends State<MovieCardWidget> {
       elevation: 64,
       child: GestureDetector(
           onLongPress: () {
-            widget.panelController.show();
+            panel.panelController.value!.show();
           },
           child: SizedBox(
               width: 375,
