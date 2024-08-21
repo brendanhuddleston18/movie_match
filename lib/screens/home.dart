@@ -5,6 +5,7 @@ import 'package:movie_match/services/movie_service.dart';
 import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:movie_match/services/panel_service.dart';
+import 'package:flutter/scheduler.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -16,6 +17,9 @@ class HomeWidget extends StatefulWidget {
 class _HomeWidgetState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      panel.hideMovie();
+    });
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         leading: IconButton(
