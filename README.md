@@ -12,6 +12,10 @@ MovieMatch is a Flutter application that allows users to discover movies by swip
 
 ## Screenshots
 
+![screenshot of app with the panel close](./lib/assets/demoPics/panelClosedScreenshot.png)
+
+![screenshot of app with the panel opened](./lib/assets/demoPics/panelOpenScreenshot.png)
+
 
 ## Getting Started
 
