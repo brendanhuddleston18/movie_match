@@ -16,10 +16,15 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends State<HomeWidget> {
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
     SchedulerBinding.instance.addPostFrameCallback((_) {
       panel.hideMovie();
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         leading: IconButton(
