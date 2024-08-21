@@ -6,6 +6,13 @@ import 'package:movie_match/services/panel_service.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:movie_match/widgets/panel.dart';
 
+// TODO: Fix padding of movie cards so they're centered on screen
+// TODO: Create Watchlist screen
+// TODO: Implement API to fetch movies
+// TODO: Create filter widget
+// TODO: Finsih designing panel so it looks pretty
+// TODO: Adjust colors
+
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
 
