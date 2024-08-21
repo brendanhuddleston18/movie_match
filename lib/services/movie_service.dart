@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:movie_match/classes/movie_class.dart';
+import 'package:movie_match/services/panel_service.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 
 MovieService movies = Get.isRegistered<MovieService>()
@@ -34,9 +35,11 @@ class MovieService extends GetxService {
         content: movie,
         likeAction: () {
           iterateValue();
+          panel.hideMovie();
         },
         nopeAction: () {
           iterateValue();
+          panel.hideMovie();
         })));
   }
 
