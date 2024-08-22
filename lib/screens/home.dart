@@ -6,7 +6,6 @@ import 'package:movie_match/services/panel_service.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:movie_match/widgets/panel.dart';
 
-// TODO: Fix padding of movie cards so they're centered on screen
 // TODO: Create Watchlist screen
 // TODO: Implement API to fetch movies
 // TODO: Create filter widget
@@ -50,7 +49,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           controller: panel.panelController.value,
           panel: const PanelWidget(),
           body: const SafeArea(
-            minimum: EdgeInsets.only(top: 125),
+            minimum: EdgeInsets.only(top: 175),
             child: SwipeCardWidget(),
           )),
     );
