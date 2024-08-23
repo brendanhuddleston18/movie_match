@@ -5,14 +5,16 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:movie_match/services/panel_service.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:movie_match/widgets/panel.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-// TODO: Create Watchlist screen
+// TODO: Implement watchlist functionality
 // TODO: Implement API to fetch movies
 // TODO: Create filter widget
 // TODO: Finish designing panel so it looks pretty
 // TODO: Adjust colors of home page
 // TODO: Do I want the hamburger with different tiles(Profile, Watchlist, Settings etc.) or just a watchlist button
 // TODO: Fix cupertino list section on watchlist
+// TODO: Skip and like buttons look out of place
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -37,9 +39,11 @@ class _HomeWidgetState extends State<HomeWidget> {
         leading: IconButton(
             onPressed: () {},
             icon: const Icon(CupertinoIcons.slider_horizontal_3)),
-        middle: const Text(
+        middle: Text(
           "Movie Match",
-          style: TextStyle(fontSize: 22, color: Color.fromRGBO(0, 122, 255, 1)),
+          style: GoogleFonts.dancingScript(
+              textStyle: const TextStyle(
+                  fontSize: 28, color: Color.fromRGBO(0, 122, 255, 1))),
         ),
         trailing: IconButton(
             onPressed: () {
@@ -53,7 +57,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           controller: panel.panelController.value,
           panel: const PanelWidget(),
           body: const SafeArea(
-            minimum: EdgeInsets.only(top: 75),
+            minimum: EdgeInsets.only(top: 65),
             child: SwipeCardWidget(),
           )),
     );

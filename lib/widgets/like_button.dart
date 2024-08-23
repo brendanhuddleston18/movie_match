@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 
 class LikeButtonWidget extends StatefulWidget {
-  const LikeButtonWidget({
-    super.key,
-    required this.matchEngine
-  });
+  const LikeButtonWidget({super.key, required this.matchEngine});
 
   final MatchEngine matchEngine;
 
