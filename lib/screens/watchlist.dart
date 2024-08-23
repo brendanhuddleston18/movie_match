@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// Route to watchlist
+//  Navigator.pushNamed(context, '/watchlist');
+
 class WatchlistWidget extends StatefulWidget {
   const WatchlistWidget({super.key});
 

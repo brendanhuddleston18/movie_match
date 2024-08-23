@@ -48,7 +48,8 @@ class _HomeWidgetState extends State<HomeWidget> {
         ),
         trailing: IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/watchlist');
+            //  TODO: Make this open pull down widget
+            // https://pub.dev/packages/pull_down_button
             },
             icon: const Icon(CupertinoIcons.line_horizontal_3)),
       ),
