@@ -7,13 +7,14 @@ import 'package:flutter/scheduler.dart';
 import 'package:movie_match/widgets/panel.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// TODO: Create Watchlist screen
+// TODO: Implement watchlist functionality
 // TODO: Implement API to fetch movies
 // TODO: Create filter widget
 // TODO: Finish designing panel so it looks pretty
 // TODO: Adjust colors of home page
 // TODO: Do I want the hamburger with different tiles(Profile, Watchlist, Settings etc.) or just a watchlist button
 // TODO: Fix cupertino list section on watchlist
+// TODO: Skip and like buttons look out of place
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
