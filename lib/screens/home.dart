@@ -9,8 +9,10 @@ import 'package:movie_match/widgets/panel.dart';
 // TODO: Create Watchlist screen
 // TODO: Implement API to fetch movies
 // TODO: Create filter widget
-// TODO: Finsih designing panel so it looks pretty
-// TODO: Adjust colors
+// TODO: Finish designing panel so it looks pretty
+// TODO: Adjust colors of home page
+// TODO: Do I want the hamburger with different tiles(Profile, Watchlist, Settings etc.) or just a watchlist button
+// TODO: Fix cupertino list section on watchlist
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -40,7 +42,9 @@ class _HomeWidgetState extends State<HomeWidget> {
           style: TextStyle(fontSize: 22, color: Color.fromRGBO(0, 122, 255, 1)),
         ),
         trailing: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/watchlist');
+            },
             icon: const Icon(CupertinoIcons.line_horizontal_3)),
       ),
       child: SlidingUpPanel(
@@ -49,7 +53,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           controller: panel.panelController.value,
           panel: const PanelWidget(),
           body: const SafeArea(
-            minimum: EdgeInsets.only(top: 175),
+            minimum: EdgeInsets.only(top: 75),
             child: SwipeCardWidget(),
           )),
     );
