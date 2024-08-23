@@ -20,7 +20,7 @@ class _MovieCardWidgetState extends State<MovieCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 64,
+      elevation: 65,
       child: GestureDetector(
           onLongPress: () {
             panel.panelController.value!.show();

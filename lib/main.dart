@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:movie_match/screens/home.dart';
 import 'package:movie_match/services/movie_service.dart';
 import 'package:movie_match/services/panel_service.dart';
@@ -22,7 +21,9 @@ class MyApp extends StatelessWidget {
       title: 'Movie Match',
       debugShowCheckedModeBanner: false,
       home: const HomeWidget(),
-      theme: const CupertinoThemeData(),
+      theme: const CupertinoThemeData(
+          barBackgroundColor: Color.fromRGBO(235, 237, 239, 1),
+          scaffoldBackgroundColor: Color.fromRGBO(235, 237, 239, 1)),
       initialRoute: initialRoute,
       routes: {
         '/watchlist': (context) => const WatchlistWidget(),
