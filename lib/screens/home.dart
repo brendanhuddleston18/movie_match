@@ -12,9 +12,10 @@ import 'package:google_fonts/google_fonts.dart';
 // TODO: Create filter widget
 // TODO: Finish designing panel so it looks pretty
 // TODO: Adjust colors of home page
-// TODO: Do I want the hamburger with different tiles(Profile, Watchlist, Settings etc.) or just a watchlist button
+// TODO: Create pulldown widget that shows Profile, watchlist, settings signout etc
 // TODO: Fix cupertino list section on watchlist
 // TODO: Skip and like buttons look out of place
+// TODO: Implement tabbed navbar to switch between cards and watchlist???
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
