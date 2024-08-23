@@ -36,6 +36,8 @@ dependencies:
   sliding_up_panel: ^2.0.0+1
   get: 
   google_fonts: ^6.2.1
+  pull_down_button: ^0.10.1
+  path_provider: ^2.0.11
 
 dev_dependencies:
   flutter_test:
