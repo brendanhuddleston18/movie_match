@@ -16,6 +16,7 @@ import 'package:movie_match/widgets/hamburger.dart';
 // TODO: Fix cupertino list section on watchlist
 // TODO: Skip and like buttons look out of place
 // TODO: Implement tabbed navbar to switch between cards and watchlist???
+// TODO: Implement DB
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
