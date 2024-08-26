@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:movie_match/screens/home.dart';
+import 'package:movie_match/screens/profile.dart';
+import 'package:movie_match/screens/settings.dart';
 import 'package:movie_match/services/movie_service.dart';
 import 'package:movie_match/services/panel_service.dart';
 import 'package:movie_match/screens/watchlist.dart';
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
       initialRoute: initialRoute,
       routes: {
         '/watchlist': (context) => const WatchlistWidget(),
+        '/profile': (context) => const ProfileWidget(),
+        '/settings': (context) => const SettingsWidget()
       },
     );
   }

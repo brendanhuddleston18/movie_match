@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({super.key});
+class SettingsWidget extends StatefulWidget {
+  const SettingsWidget({super.key});
 
   @override
-  State<ProfileWidget> createState() => _ProfileWidgetState();
+  State<SettingsWidget> createState() => _SettingsWidgetState();
 }
 
-class _ProfileWidgetState extends State<ProfileWidget> {
+class _SettingsWidgetState extends State<SettingsWidget> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -18,8 +18,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 Navigator.pop(context);
               },
               icon: const Icon(CupertinoIcons.chevron_back)),
-          middle: const Text("Profile"),
+          middle: const Text('Settings'),
         ),
-        child: const Text('Profile'));
+        child: const Text("Settings"));
   }
 }

@@ -6,6 +6,7 @@ import 'package:movie_match/services/panel_service.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:movie_match/widgets/panel.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_match/widgets/hamburger.dart';
 
 // TODO: Implement watchlist functionality
 // TODO: Implement API to fetch movies
@@ -46,12 +47,7 @@ class _HomeWidgetState extends State<HomeWidget> {
               textStyle: const TextStyle(
                   fontSize: 28, color: Color.fromRGBO(0, 122, 255, 1))),
         ),
-        trailing: IconButton(
-            onPressed: () {
-            //  TODO: Make this open pull down widget
-            // https://pub.dev/packages/pull_down_button
-            },
-            icon: const Icon(CupertinoIcons.line_horizontal_3)),
+        trailing: const HamburgerWidget(),
       ),
       child: SlidingUpPanel(
           borderRadius: const BorderRadius.all(Radius.circular(12)),
