@@ -20,21 +20,30 @@ class _HamburgerWidgetState extends State<HamburgerWidget> {
           ),
           title: 'Profile',
           subtitle: 'Tap to open',
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, '/profile');
+          },
           icon: CupertinoIcons.profile_circled,
         ),
         const PullDownMenuDivider.large(),
         PullDownMenuItem(
-          title: 'Menu item',
-          onTap: () {},
+          title: 'Watchlist',
+          icon: CupertinoIcons.heart_fill,
+          onTap: () {
+            Navigator.pushNamed(context, '/watchlist');
+          },
         ),
         PullDownMenuItem(
-          title: 'Menu item 2',
-          onTap: () {},
+          title: 'Settings',
+          icon: CupertinoIcons.gear_alt_fill,
+          onTap: () {
+            Navigator.pushNamed(context, '/settings');
+          },
         ),
         const PullDownMenuDivider.large(),
         PullDownMenuItem(
           title: 'Sign out',
+          icon: CupertinoIcons.device_phone_portrait,
           onTap: () {},
           itemTheme: const PullDownMenuItemTheme(
               textStyle: TextStyle(color: Colors.red)),
