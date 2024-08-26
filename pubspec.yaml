@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^6.2.1
   pull_down_button: ^0.10.1
   path_provider: ^2.0.11
+  supabase_flutter: ^2.6.0
 
 dev_dependencies:
   flutter_test:
