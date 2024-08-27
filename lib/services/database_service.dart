@@ -2,7 +2,6 @@ import 'package:movie_match/classes/movie_class.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:get/get.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:uuid/uuid.dart';
 
 DatabaseService database = Get.isRegistered<DatabaseService>()
     ? Get.find<DatabaseService>()
