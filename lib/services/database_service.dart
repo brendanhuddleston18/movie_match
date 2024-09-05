@@ -34,5 +34,8 @@ class DatabaseService extends GetxService {
     });
   }
 
-  // TODO: Make a delete movie from watchlist function
+  Future<void> deleteMovieFromWatchlist(String id) async {
+    await supabase.from('watchlist').delete().eq('id', id);
+  }
+
 }
