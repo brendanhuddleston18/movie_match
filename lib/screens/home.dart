@@ -16,6 +16,7 @@ import 'package:movie_match/widgets/hamburger.dart';
 // TODO: Skip and like buttons look out of place
 // TODO: Implement tabbed navbar to switch between cards and watchlist???
 // TODO: Stylize Watchlist tiles, Drag and drop???
+// TODO: Create Profile/Implement Single Sign On
 
 
 
