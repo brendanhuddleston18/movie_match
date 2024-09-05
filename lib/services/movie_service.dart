@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:movie_match/classes/movie_class.dart';
 import 'package:movie_match/services/panel_service.dart';
+import 'package:movie_match/services/database_service.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 
 MovieService movies = Get.isRegistered<MovieService>()
@@ -36,6 +37,7 @@ class MovieService extends GetxService {
         likeAction: () {
           iterateValue();
           panel.hideMovie();
+          database.addMovieToWatchlist(movie);
         },
         nopeAction: () {
           iterateValue();

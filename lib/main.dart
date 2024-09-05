@@ -4,11 +4,13 @@ import 'package:movie_match/screens/profile.dart';
 import 'package:movie_match/screens/settings.dart';
 import 'package:movie_match/services/movie_service.dart';
 import 'package:movie_match/services/panel_service.dart';
+import 'package:movie_match/services/database_service.dart';
 import 'package:movie_match/screens/watchlist.dart';
 
 Future<Null> main() async {
   await movies.init();
   await panel.init();
+  await database.init();
   runApp(const MyApp());
 }
 

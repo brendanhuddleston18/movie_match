@@ -8,7 +8,6 @@ import 'package:movie_match/widgets/panel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_match/widgets/hamburger.dart';
 
-// TODO: Implement watchlist functionality
 // TODO: Implement API to fetch movies
 // TODO: Create filter widget
 // TODO: Finish designing panel so it looks pretty
@@ -16,7 +15,10 @@ import 'package:movie_match/widgets/hamburger.dart';
 // TODO: Fix cupertino list section on watchlist
 // TODO: Skip and like buttons look out of place
 // TODO: Implement tabbed navbar to switch between cards and watchlist???
-// TODO: Implement DB
+// TODO: Stylize Watchlist tiles, Drag and drop???
+// TODO: Create Profile/Implement Single Sign On
+
+
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
