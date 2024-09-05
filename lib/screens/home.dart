@@ -8,7 +8,6 @@ import 'package:movie_match/widgets/panel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_match/widgets/hamburger.dart';
 
-// TODO: Implement watchlist functionality
 // TODO: Implement API to fetch movies
 // TODO: Create filter widget
 // TODO: Finish designing panel so it looks pretty
@@ -16,8 +15,9 @@ import 'package:movie_match/widgets/hamburger.dart';
 // TODO: Fix cupertino list section on watchlist
 // TODO: Skip and like buttons look out of place
 // TODO: Implement tabbed navbar to switch between cards and watchlist???
-// TODO: Implement DB(Do I make the connection a service or just an import?)
-// TODO: Load the env into DB connection
+// TODO: Stylize Watchlist tiles, Drag and drop???
+
+
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
