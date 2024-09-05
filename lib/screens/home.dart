@@ -5,6 +5,20 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:movie_match/services/panel_service.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:movie_match/widgets/panel.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_match/widgets/hamburger.dart';
+
+// TODO: Implement API to fetch movies
+// TODO: Create filter widget
+// TODO: Finish designing panel so it looks pretty
+// TODO: Adjust colors of home page
+// TODO: Fix cupertino list section on watchlist
+// TODO: Skip and like buttons look out of place
+// TODO: Implement tabbed navbar to switch between cards and watchlist???
+// TODO: Stylize Watchlist tiles, Drag and drop???
+// TODO: Create Profile/Implement Single Sign On
+
+
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -29,13 +43,13 @@ class _HomeWidgetState extends State<HomeWidget> {
         leading: IconButton(
             onPressed: () {},
             icon: const Icon(CupertinoIcons.slider_horizontal_3)),
-        middle: const Text(
+        middle: Text(
           "Movie Match",
-          style: TextStyle(fontSize: 22, color: Color.fromRGBO(0, 122, 255, 1)),
+          style: GoogleFonts.dancingScript(
+              textStyle: const TextStyle(
+                  fontSize: 28, color: Color.fromRGBO(0, 122, 255, 1))),
         ),
-        trailing: IconButton(
-            onPressed: () {},
-            icon: const Icon(CupertinoIcons.line_horizontal_3)),
+        trailing: const HamburgerWidget(),
       ),
       child: SlidingUpPanel(
           borderRadius: const BorderRadius.all(Radius.circular(12)),
@@ -43,7 +57,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           controller: panel.panelController.value,
           panel: const PanelWidget(),
           body: const SafeArea(
-            minimum: EdgeInsets.only(top: 125),
+            minimum: EdgeInsets.only(top: 65),
             child: SwipeCardWidget(),
           )),
     );

@@ -19,6 +19,8 @@ class _SkipButtonWidgetState extends State<SkipButtonWidget> {
         onPressed: () {
           widget.matchEngine.currentItem!.nope();
         },
-        icon: const Icon(color: Colors.red, CupertinoIcons.xmark_circle));
+        icon: const Icon(
+            color: Color.fromRGBO(175, 50, 50, 1),
+            CupertinoIcons.xmark_circle));
   }
 }
