@@ -9,13 +9,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_match/widgets/hamburger.dart';
 
 // TODO: Implement API to fetch movies
+// https://pub.dev/packages/tmdb_api
+// https://developer.themoviedb.org/reference/intro/getting-started
+
 // TODO: Create filter widget
+
 // TODO: Finish designing panel so it looks pretty
+
 // TODO: Adjust colors of home page
+
 // TODO: Fix cupertino list section on watchlist
+
 // TODO: Skip and like buttons look out of place
+
 // TODO: Implement tabbed navbar to switch between cards and watchlist???
+
 // TODO: Stylize Watchlist tiles, Drag and drop???
+
 // TODO: Create Profile/Implement Single Sign On
 
 
