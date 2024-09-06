@@ -22,12 +22,8 @@ class MovieService extends GetxService {
     await dotenv.load(fileName: '.env');
     String tmdbKey = dotenv.env['TMDB_KEY']!;
     String tmdbReadAccessToken = dotenv.env['TMDB_READ_ACCESS_TOKEN']!;
-    final String response =
-        await rootBundle.loadString("lib/assets/sample_movies.json");
-    final data = json.decode(response);
     final tmdb = TMDB(ApiKeys(tmdbKey, tmdbReadAccessToken));
     Map result = await tmdb.v3.movies.getTopRated();
-    print(result);
 
     addMoviesToList(result);
     addToSwipeList(movieList);
