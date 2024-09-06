@@ -31,10 +31,11 @@ class _MovieCardWidgetState extends State<MovieCardWidget> {
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                 child: Image.network(
-                  widget.movie.image,
+                  'https://image.tmdb.org/t/p/w185/${widget.movie.image}',
                   fit: BoxFit.fitWidth,
                 ),
               ))),
     );
   }
 }
+

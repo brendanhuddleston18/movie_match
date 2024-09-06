@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_match/classes/movie_class.dart';
 import 'package:movie_match/services/database_service.dart';
 import 'package:movie_match/widgets/delete_button.dart';
 

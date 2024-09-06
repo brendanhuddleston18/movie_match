@@ -21,12 +21,13 @@ class Movie {
 
     return Movie(
         id: uuid.v4(),
-        title: data["Title"],
-        image: data["Image"],
-        description: data["Description"],
-        cast: (data["Cast"] as List<dynamic>)
-            .map((actor) => actor as String)
-            .toList(),
-        rating: data["Rating"] as double);
+        title: data["title"],
+        image: data["poster_path"],
+        description: data["overview"],
+        cast: ["actor 1", "actor 2", "actor 3"],
+        // cast: (data["Cast"] as List<dynamic>)
+        //     .map((actor) => actor as String)
+        //     .toList(),
+        rating: data["vote_average"] as double);
   }
 }

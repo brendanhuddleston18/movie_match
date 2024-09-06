@@ -28,8 +28,6 @@ import 'package:movie_match/widgets/hamburger.dart';
 
 // TODO: Create Profile/Implement Single Sign On
 
-
-
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
 
