@@ -8,9 +8,8 @@ import 'package:movie_match/widgets/panel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_match/widgets/hamburger.dart';
 
-// TODO: Implement API to fetch movies
-// https://pub.dev/packages/tmdb_api
-// https://developer.themoviedb.org/reference/intro/getting-started
+//  TODO: Randomize movie generation
+// https://www.themoviedb.org/talk/5dc1e248f1b5710015eb016f
 
 // TODO: Create filter widget
 
@@ -27,8 +26,6 @@ import 'package:movie_match/widgets/hamburger.dart';
 // TODO: Stylize Watchlist tiles, Drag and drop???
 
 // TODO: Create Profile/Implement Single Sign On
-
-
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
