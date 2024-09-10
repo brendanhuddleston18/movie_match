@@ -12,6 +12,8 @@ import 'package:movie_match/widgets/hamburger.dart';
 // https://www.themoviedb.org/talk/5dc1e248f1b5710015eb016f
 
 // TODO: Create filter widget
+// Do I add the filter to movie service or its own service?
+// How would filter the genre?
 
 // TODO: Finish designing panel so it looks pretty
 

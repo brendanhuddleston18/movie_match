@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:movie_match/classes/movie_class.dart';
@@ -23,7 +21,7 @@ class MovieService extends GetxService {
     String tmdbKey = dotenv.env['TMDB_KEY']!;
     String tmdbReadAccessToken = dotenv.env['TMDB_READ_ACCESS_TOKEN']!;
     final tmdb = TMDB(ApiKeys(tmdbKey, tmdbReadAccessToken));
-    Map result = await tmdb.v3.movies.getTopRated();
+    Map result = await tmdb.v3.discover.getMovies();
 
     addMoviesToList(result);
     addToSwipeList(movieList);
@@ -52,5 +50,20 @@ class MovieService extends GetxService {
 
   void iterateValue() {
     currentMovie.value = matchEngine.value!.nextItem;
+  }
+
+  // TODO: Check if this works
+  void filterMovie(String genre) async {
+    await dotenv.load(fileName: '.env');
+    String tmdbKey = dotenv.env['TMDB_KEY']!;
+    String tmdbReadAccessToken = dotenv.env['TMDB_READ_ACCESS_TOKEN']!;
+    final tmdb = TMDB(ApiKeys(tmdbKey, tmdbReadAccessToken));
+    Map result = await tmdb.v3.discover.getMovies(withGenres: genre);
+    // Gotta be a better way to do this ^^
+
+    addMoviesToList(result);
+    addToSwipeList(movieList);
+    matchEngine.value = MatchEngine(swipeItems: swipeList);
+    currentMovie.value = matchEngine.value!.currentItem;
   }
 }
