@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_match/widgets/filter_widget.dart';
 import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:movie_match/services/panel_service.dart';
@@ -49,9 +50,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(CupertinoIcons.slider_horizontal_3)),
+        leading: const FilterWidget(),
         middle: Text(
           "Movie Match",
           style: GoogleFonts.dancingScript(
