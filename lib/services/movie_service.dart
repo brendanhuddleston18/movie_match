@@ -53,18 +53,8 @@ class MovieService extends GetxService {
   }
 
   // TODO: Check if this works
-  // TODO: SHIT DON"T WORK
+  // DON"T WORK
   void filterMovie(String genre) async {
-    await dotenv.load(fileName: '.env');
-    String tmdbKey = dotenv.env['TMDB_KEY']!;
-    String tmdbReadAccessToken = dotenv.env['TMDB_READ_ACCESS_TOKEN']!;
-    final tmdb = TMDB(ApiKeys(tmdbKey, tmdbReadAccessToken));
-    Map result = await tmdb.v3.discover.getMovies(withGenres: genre);
-    // Gotta be a better way to do this ^^
-
-    addMoviesToList(result);
-    addToSwipeList(movieList);
-    matchEngine.value = MatchEngine(swipeItems: swipeList);
-    currentMovie.value = matchEngine.value!.currentItem;
+    
   }
 }

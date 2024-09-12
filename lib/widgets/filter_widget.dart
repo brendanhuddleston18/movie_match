@@ -21,14 +21,26 @@ class _FilterWidgetState extends State<FilterWidget> {
           title: "Pick a genre",
           onTap: () {},
         ),
-        PullDownMenuItem.selectable(
+        PullDownMenuItem(
             onTap: () {
-              movies.filterMovie("action");
+              movies.filterMovie("28");
             },
             title: "Action"),
-        PullDownMenuItem(onTap: () {}, title: "Comedy"),
-        PullDownMenuItem(onTap: () {}, title: "Horror"),
-        PullDownMenuItem(onTap: () {}, title: "Drama"),
+        PullDownMenuItem(
+            onTap: () {
+              movies.filterMovie("35");
+            },
+            title: "Comedy"),
+        PullDownMenuItem(
+            onTap: () {
+              movies.filterMovie("27");
+            },
+            title: "Horror"),
+        PullDownMenuItem(
+            onTap: () {
+              movies.filterMovie("18");
+            },
+            title: "Drama"),
         const PullDownMenuDivider.large(),
         PullDownMenuItem(
           onTap: () {},
