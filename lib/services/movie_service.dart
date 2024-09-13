@@ -52,9 +52,6 @@ class MovieService extends GetxService {
     currentMovie.value = matchEngine.value!.nextItem;
   }
 
-  // TODO: Check if this works
-  // DON"T WORK
-  void filterMovie(String genre) async {
-    
-  }
+  // TODO: implement filter function
+  void filterMovie(String genre) async {}
 }
