@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:movie_match/widgets/filter_widget.dart';
 import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
