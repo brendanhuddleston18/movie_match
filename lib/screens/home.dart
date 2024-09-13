@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:movie_match/widgets/filter_widget.dart';
 import 'package:movie_match/widgets/swipe_card.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:movie_match/services/panel_service.dart';
@@ -12,6 +12,8 @@ import 'package:movie_match/widgets/hamburger.dart';
 // https://www.themoviedb.org/talk/5dc1e248f1b5710015eb016f
 
 // TODO: Create filter widget
+// Do I add the filter to movie service or its own service?
+// How would filter the genre?
 
 // TODO: Finish designing panel so it looks pretty
 
@@ -47,9 +49,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(CupertinoIcons.slider_horizontal_3)),
+        leading: const FilterWidget(),
         middle: Text(
           "Movie Match",
           style: GoogleFonts.dancingScript(
