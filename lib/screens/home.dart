@@ -7,6 +7,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:movie_match/widgets/panel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_match/widgets/hamburger.dart';
+import 'package:movie_match/widgets/nav_slide.dart';
 
 //  TODO: Randomize movie generation
 // https://www.themoviedb.org/talk/5dc1e248f1b5710015eb016f
@@ -20,6 +21,8 @@ import 'package:movie_match/widgets/hamburger.dart';
 // TODO: Skip and like buttons look out of place
 
 // TODO: Implement tabbed navbar to switch between cards and watchlist???
+// https://api.flutter.dev/flutter/cupertino/CupertinoSegmentedControl-class.html?_gl=1*5tzef0*_ga*NTE5MDUzMTA4LjE3MjY4NjkxMDQ.*_ga_04YGWK0175*MTcyNjg2OTEwMy4xLjEuMTcyNjg2OTE1Mi4wLjAuMA..
+// TODO: Get the pages in sync with switch
 
 // TODO: Stylize Watchlist tiles, Drag and drop???
 
@@ -44,15 +47,10 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        leading: const FilterWidget(),
-        middle: Text(
-          "Movie Match",
-          style: GoogleFonts.dancingScript(
-              textStyle: const TextStyle(
-                  fontSize: 28, color: Color.fromRGBO(0, 122, 255, 1))),
-        ),
-        trailing: const HamburgerWidget(),
+      navigationBar: const CupertinoNavigationBar(
+        leading: FilterWidget(),
+        middle: NavScrollWidget(),
+        trailing: HamburgerWidget(),
       ),
       child: SlidingUpPanel(
           borderRadius: const BorderRadius.all(Radius.circular(12)),

@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Color.fromRGBO(235, 237, 239, 1)),
       initialRoute: initialRoute,
       routes: {
+        '/home': (context) => const HomeWidget(),
         '/watchlist': (context) => const WatchlistWidget(),
         '/profile': (context) => const ProfileWidget(),
         '/settings': (context) => const SettingsWidget()
