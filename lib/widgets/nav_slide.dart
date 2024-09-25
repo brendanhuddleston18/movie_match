@@ -2,11 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_match/services/tab_service.dart';
 
-Map<Screen, String> segmentScreens = {
-  Screen.home: '/home',
-  Screen.watchlist: '/watchlist'
-};
-
 class NavScrollWidget extends StatefulWidget {
   const NavScrollWidget({super.key});
 
@@ -41,8 +36,8 @@ class _NavScrollWidgetState extends State<NavScrollWidget> {
           if (value == Screen.home) {
             Navigator.pop(context);
           } else {
-            Navigator.pushNamed(
-                context, segmentScreens[navTabs.selectedSegment.value]!);
+            Navigator.pushNamed(context,
+                navTabs.segmentScreens[navTabs.selectedSegment.value]!);
           }
         });
   }
