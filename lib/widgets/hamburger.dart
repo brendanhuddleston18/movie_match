@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_match/services/tab_service.dart';
 import 'package:pull_down_button/pull_down_button.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -31,6 +32,7 @@ class _HamburgerWidgetState extends State<HamburgerWidget> {
           icon: CupertinoIcons.heart_fill,
           onTap: () {
             Navigator.pushNamed(context, '/watchlist');
+            navTabs.changeTabValue(Screen.watchlist);
           },
         ),
         PullDownMenuItem(

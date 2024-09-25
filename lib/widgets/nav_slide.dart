@@ -15,8 +15,6 @@ class NavScrollWidget extends StatefulWidget {
 }
 
 class _NavScrollWidgetState extends State<NavScrollWidget> {
-  
-
   @override
   Widget build(BuildContext context) {
     return CupertinoSegmentedControl<Screen>(
@@ -39,9 +37,13 @@ class _NavScrollWidgetState extends State<NavScrollWidget> {
           ),
         },
         onValueChanged: (Screen value) {
-          navTabs.selectedSegment.value = value;
-          Navigator.pushNamed(
-              context, segmentScreens[navTabs.selectedSegment.value]!);
+          navTabs.changeTabValue(value);
+          if (value == Screen.home) {
+            Navigator.pop(context);
+          } else {
+            Navigator.pushNamed(
+                context, segmentScreens[navTabs.selectedSegment.value]!);
+          }
         });
   }
 }
