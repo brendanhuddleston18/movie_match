@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_match/services/database_service.dart';
 import 'package:movie_match/widgets/delete_button.dart';
+import 'package:movie_match/widgets/nav_slide.dart';
+import 'package:movie_match/services/tab_service.dart';
 
 class WatchlistWidget extends StatefulWidget {
   const WatchlistWidget({super.key});
@@ -26,13 +28,10 @@ class _WatchlistWidgetState extends State<WatchlistWidget> {
           leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
+                navTabs.selectedSegment.value = Screen.home;
               },
               icon: const Icon(CupertinoIcons.chevron_back)),
-          middle: const Text(
-            "Watchlist",
-            style:
-                TextStyle(fontSize: 22, color: Color.fromRGBO(0, 122, 255, 1)),
-          ),
+          middle: const NavScrollWidget(),
         ),
         child: FutureBuilder<List<dynamic>>(
             future: watchlistFuture,

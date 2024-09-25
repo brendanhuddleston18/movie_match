@@ -7,12 +7,14 @@ import 'package:movie_match/services/panel_service.dart';
 import 'package:movie_match/services/database_service.dart';
 import 'package:movie_match/services/filter_service.dart';
 import 'package:movie_match/screens/watchlist.dart';
+import 'package:movie_match/services/tab_service.dart';
 
 Future<Null> main() async {
   await movies.init();
   await panel.init();
   await database.init();
   await filter.init();
+  await navTabs.init();
   runApp(const MyApp());
 }
 
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Color.fromRGBO(235, 237, 239, 1)),
       initialRoute: initialRoute,
       routes: {
+        '/home': (context) => const HomeWidget(),
         '/watchlist': (context) => const WatchlistWidget(),
         '/profile': (context) => const ProfileWidget(),
         '/settings': (context) => const SettingsWidget()
