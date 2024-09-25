@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-enum Screen { home, watchlist }
+import 'package:movie_match/services/tab_service.dart';
 
 Map<Screen, String> segmentScreens = {
   Screen.home: '/home',
@@ -16,13 +15,13 @@ class NavScrollWidget extends StatefulWidget {
 }
 
 class _NavScrollWidgetState extends State<NavScrollWidget> {
-  Screen selectedSegment = Screen.home;
+  
 
   @override
   Widget build(BuildContext context) {
     return CupertinoSegmentedControl<Screen>(
         selectedColor: const Color.fromRGBO(0, 122, 255, 1),
-        groupValue: selectedSegment,
+        groupValue: navTabs.selectedSegment.value,
         children: <Screen, Widget>{
           Screen.home: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -40,10 +39,9 @@ class _NavScrollWidgetState extends State<NavScrollWidget> {
           ),
         },
         onValueChanged: (Screen value) {
-          setState(() {
-            selectedSegment = value;
-            Navigator.pushNamed(context, segmentScreens[selectedSegment]!);
-          });
+          navTabs.selectedSegment.value = value;
+          Navigator.pushNamed(
+              context, segmentScreens[navTabs.selectedSegment.value]!);
         });
   }
 }

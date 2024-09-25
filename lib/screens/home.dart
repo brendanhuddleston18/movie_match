@@ -5,7 +5,6 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:movie_match/services/panel_service.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:movie_match/widgets/panel.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_match/widgets/hamburger.dart';
 import 'package:movie_match/widgets/nav_slide.dart';
 
